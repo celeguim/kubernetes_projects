@@ -13,7 +13,7 @@ node {
     stage ('Docker Build Image') {
         sshagent(['ansible-server']) {
            sh "ssh -o StrictHostKeyChecking=no ec2-user@54.160.214.145"
-           sh "ssh -o StrictHostKeyChecking=no ec2-user@54.160.214.145 sudo docker image build -t $JOB_NAME:v1.$BUILD_ID -f /home/${USER}/Dockerfile ."
+           sh "ssh -o StrictHostKeyChecking=no ec2-user@54.160.214.145 sudo docker image build -t $JOB_NAME:v1.$BUILD_ID -f /home/ec2-user/Dockerfile ."
         }
     }
 }
